@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+<style>
+    
+    h1, h3{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    img{
+        width: 400px;
+        height: auto;
+        border-radius: 2rem;
+        border: 2px solid black;
+    }
+    .tableclass {
+            border: solid darkgreen 7px;
+
+        }
+    body {
+            background: linear-gradient(to right, green 10%, lightblue 90%);
+            color: white;
+        }
+
+</style>
+</head>
+<body>
+    <table class="tableclass">
+        <tr><td><h1>Currency Converter</h1></td></tr>
+        <tr><td><h3>Converty USA Dollars to other currencies.</h3></td></tr>
+        <tr><td>
+        <form name="theform">
+            <table>
+                <tr>
+                    <td rowspan="10"><img src="money.jpg"></td>
+                    <td>Enter USA dollar amount:</td>
+                    <td><input size="10" name="dollarFmInput" ></td>
+                </tr>
+                <tr>
+                    <td style="float: right;"><strong>Euro:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="euroResultFmOutput" place></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Pound sterling:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="poundResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Australian Dollar:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="australianResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Mexican Pesos:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="mexicanResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Canadian Dollar:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="canadianResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Turkish Lira:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="turkishResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Japanese Yen:</strong></td>
+                    <td style="background-color: white; color: black; font-weight: bold;"  id="japaneseResultFmOutput"></td>
+                </tr><tr>
+                    <td style="float: right;"><strong>Swiss Frane:</strong></td>
+                    <td style="background-color: white; color: black ; font-weight: bold;" id="swissResultFmOutput"></td>
+                </tr>
+                <td colspan="2">
+                    <input type="button" name="calc" value="Calculate" onclick="calculate();">
+                    <input type="button" name="clear" value="Clear" onclick="clearinfo();">
+                </td>
+            </table>
+        </form>
+        </td></tr>
+    </table>
+        <script>
+            
+            function calculate(){
+                
+
+            // declare constant and the variables
+            const euroc = .84;
+            const poundc = .76;
+            const austrac = 1.38;
+            const mexc = 20.41;
+            const canac = 1.31;
+            const turkc = 7.66;
+            const japc = 104.69;
+            const swissc = .91;
+
+            var dollar
+
+            var euro
+            var pound
+            var australian
+            var mexican
+            var canadian
+            var turkish
+            var japanese
+            var swiss
+
+            dollar = parseFloat(document.theform.dollarFmInput.value)
+
+            euro = parseFloat(dollar * euroc) 
+            pound = parseFloat(dollar * poundc)
+            australian = parseFloat(dollar * austrac)
+            mexican = parseFloat(dollar * mexc)
+            canadian = parseFloat(dollar * canac)
+            turkish = parseFloat(dollar * turkc)
+            japanese = parseFloat(dollar * japc)
+            swiss = parseFloat(dollar * swissc)
+
+            document.getElementById("euroResultFmOutput").innerHTML = "$" + euro.toFixed(2);
+            document.getElementById("poundResultFmOutput").innerHTML = "$" + pound.toFixed(2);
+            document.getElementById("australianResultFmOutput").innerHTML = "$" + australian.toFixed(2);
+            document.getElementById("mexicanResultFmOutput").innerHTML = "$" + mexican.toFixed(2);
+            document.getElementById("canadianResultFmOutput").innerHTML = "$" + canadian.toFixed(2);
+            document.getElementById("turkishResultFmOutput").innerHTML = "$" + turkish.toFixed(2);
+            document.getElementById("japaneseResultFmOutput").innerHTML = "$" + japanese.toFixed(2);
+            document.getElementById("swissResultFmOutput").innerHTML = "$" + swiss.toFixed(2);
+
+            }
+
+            function clearinfo(){
+
+                document.theform.dollarFmInput.value = " ";
+
+                document.getElementById("euroResultFmOutput").innerHTML = " ";
+                document.getElementById("poundResultFmOutput").innerHTML = " ";
+                document.getElementById("australianResultFmOutput").innerHTML = " ";
+                document.getElementById("mexicanResultFmOutput").innerHTML = " ";
+                document.getElementById("canadianResultFmOutput").innerHTML = " ";
+                document.getElementById("turkishResultFmOutput").innerHTML = " ";
+                document.getElementById("japaneseResultFmOutput").innerHTML = " ";
+                document.getElementById("swissResultFmOutput").innerHTML = " ";
+
+                document.theform.dollarFmInput.focus();
+            }
+        </script>
+
+<a href="http://csnet.southtexascollege.edu/localuser/jcast183/index.html" style="color: white;">Go Back to HOMEPAGE<br>
+    Jovanni Castillo Moreno</a>
+
+</body>
+</html>
